@@ -1,0 +1,21 @@
+'''Tapşırıq 4: Xətanı tap
+async def task():
+ time.sleep(2)
+ print("Done")
+async def main():
+ await asyncio.gather(
+ task(), task(), task()
+ )
+Sual: Bu kod niyə real async kimi işləmir?
+Düzgün variantı yazın.'''
+
+import asyncio
+
+async def task():
+    await asyncio.sleep(2)
+    print("Done")
+
+async def main():
+ await asyncio.gather(task(), task(), task())
+
+asyncio.run(main())
